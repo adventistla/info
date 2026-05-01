@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас</title>
+    <style>
+        body { margin: 0; background: #fff; }
+        .full-page-img { width: 100%; height: auto; display: block; }
+        .home-link {
+            position: absolute;
+            top: 4vw;
+            left: 8vw;
+            z-index: 100;
+        }
+        .home-img { 
+            width: 12vw; /* Размер кнопки меняется вместе с экраном */
+            min-width: 80px; 
+            max-width: 160px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="home-link">
+        <img src="images/home.png" class="home-img">
+    </a>
+    <img src="images/page1.jpg" class="full-page-img">
+</body>
+</html>
