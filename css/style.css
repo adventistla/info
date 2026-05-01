@@ -1,4 +1,4 @@
-/* 1. Общие настройки */
+/* 1. Сброс стилей и базовые настройки */
 * {
     margin: 0;
     padding: 0;
@@ -19,7 +19,8 @@ body, html {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background: url('../images/hero.jpg') no-repeat center center / cover;
+    background: url('../images/hero.jpg') no-repeat center center;
+    background-size: cover;
     background-attachment: fixed;
 }
 
@@ -27,6 +28,7 @@ body, html {
 .main-header {
     width: 100%;
     flex: 0 0 auto;
+    display: flex;
 }
 
 .header-img {
@@ -36,15 +38,19 @@ body, html {
     object-fit: cover;
 }
 
-/* Сетка кнопок */
+/* Сетка кнопок с фиксированным отступом от хедера */
 .button-grid {
-    flex: 1;
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 колонки для ПК */
-    grid-template-rows: auto auto;
-    gap: 2vw; /* Гибкий отступ между кнопками */
-    padding: 4vw 6vw; /* Гибкие отступы от краев экрана */
-    align-content: center;
+    grid-template-rows: auto;
+    
+    /* ФИКСИРОВАННЫЙ ОТСТУП ОТ HEADER */
+    margin-top: 30px; 
+    
+    /* Гибкие отступы по бокам и снизу */
+    gap: 2vw; 
+    padding: 0 6vw 4vw 6vw; 
+    width: 100%;
 }
 
 .grid-item {
@@ -53,9 +59,11 @@ body, html {
     background-position: center;
     background-repeat: no-repeat;
     text-decoration: none;
-    aspect-ratio: 16 / 9; /* Пропорция кнопок из XD */
+    aspect-ratio: 16 / 9; /* Пропорция кнопок из вашего макета */
     transition: transform 0.1s ease;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border: none;
+    cursor: pointer;
 }
 
 .grid-item:active {
@@ -75,18 +83,19 @@ body, html {
     display: block;
 }
 
-/* Кнопка Домой: Фиксированные % для сохранения позиции и масштаба */
+/* Кнопка Домой: Фиксированные % для сохранения позиции относительно фона */
 .home-link {
     position: absolute;
-    /* Позиция относительно page.jpg (расчет от 1920x1080) */
-    top: 4.81%;  /* 52px / 1080px */
-    left: 7.29%; /* 140px / 1920px */
+    /* Позиция рассчитана от 1920x1080 для идеального совпадения */
+    top: 4.81%;  /* 52px от верха */
+    left: 7.29%; /* 140px от левого края */
     z-index: 100;
-    width: 8.33%; /* 160px / 1920px */
-    min-width: 60px; /* Защита от чрезмерного уменьшения */
+    width: 8.33%; /* Ширина 160px при экране 1920px */
+    min-width: 60px;
     background: none;
     border: none;
     padding: 0;
+    cursor: pointer;
 }
 
 .home-img {
@@ -96,18 +105,23 @@ body, html {
     filter: drop-shadow(0 2px 5px rgba(0,0,0,0.2));
 }
 
+.home-link:active {
+    transform: scale(0.9);
+}
+
 /* 4. Адаптация под смартфоны (Экран меньше 768px) */
 @media (max-width: 768px) {
     .button-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 колонки на телефонах */
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки на телефоне */
+        margin-top: 20px; /* Уменьшаем отступ для маленьких экранов */
         gap: 15px;
-        padding: 20px;
+        padding: 0 20px 20px 20px;
     }
 
     .home-link {
-        /* На телефонах смещаем чуть ближе к углу для удобства */
+        /* На смартфонах смещаем кнопку для удобства большого пальца */
         top: 3%;
         left: 5%;
-        width: 15%; /* Делаем чуть крупнее относительно экрана телефона */
+        width: 18%; 
     }
 }
