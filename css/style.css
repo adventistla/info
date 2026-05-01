@@ -1,4 +1,4 @@
-/* 1. Сброс стилей и базовые настройки */
+/* Базовый сброс */
 * {
     margin: 0;
     padding: 0;
@@ -13,18 +13,16 @@ body, html {
     overflow-x: hidden;
 }
 
-/* 2. Главная страница (Меню) */
+/* --- ГЛАВНАЯ СТРАНИЦА --- */
 .kiosk-container {
     width: 100%;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background: url('../images/hero.jpg') no-repeat center center;
-    background-size: cover;
+    background: url('../images/hero.jpg') no-repeat center center / cover;
     background-attachment: fixed;
 }
 
-/* Шапка на всю ширину */
 .main-header {
     width: 100%;
     flex: 0 0 auto;
@@ -38,16 +36,11 @@ body, html {
     object-fit: cover;
 }
 
-/* Сетка кнопок с фиксированным отступом от хедера */
 .button-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 колонки для ПК */
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
-    
-    /* ФИКСИРОВАННЫЙ ОТСТУП ОТ HEADER */
-    margin-top: 30px; 
-    
-    /* Гибкие отступы по бокам и снизу */
+    margin-top: 30px; /* Фиксированный отступ от шапки */
     gap: 2vw; 
     padding: 0 6vw 4vw 6vw; 
     width: 100%;
@@ -59,22 +52,19 @@ body, html {
     background-position: center;
     background-repeat: no-repeat;
     text-decoration: none;
-    aspect-ratio: 16 / 9; /* Пропорция кнопок из вашего макета */
+    aspect-ratio: 16 / 9; 
     transition: transform 0.1s ease;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    border: none;
-    cursor: pointer;
 }
 
-.grid-item:active {
-    transform: scale(0.96);
-}
+.grid-item:active { transform: scale(0.96); }
 
-/* 3. Внутренняя страница (Контент) */
-.page-wrapper {
+/* --- ВНУТРЕННЯЯ СТРАНИЦА (About) --- */
+.image-container {
     position: relative;
     width: 100%;
-    height: auto;
+    display: inline-block;
+    line-height: 0; /* Убирает зазор под картинкой */
 }
 
 .full-page-img {
@@ -83,19 +73,14 @@ body, html {
     display: block;
 }
 
-/* Кнопка Домой: Фиксированные % для сохранения позиции относительно фона */
+/* Кнопка Home: привязана к % от ширины/высоты картинки */
 .home-link {
     position: absolute;
-    /* Позиция рассчитана от 1920x1080 для идеального совпадения */
-    top: 4.81%;  /* 52px от верха */
-    left: 7.29%; /* 140px от левого края */
+    top: 4.81%;  /* Расчет от 1080px */
+    left: 7.29%; /* Расчет от 1920px */
     z-index: 100;
-    width: 8.33%; /* Ширина 160px при экране 1920px */
-    min-width: 60px;
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
+    width: 8.33%; /* 160px при 1920px */
+    min-width: 60px; /* Минимальный размер для мобильных */
 }
 
 .home-img {
@@ -105,23 +90,18 @@ body, html {
     filter: drop-shadow(0 2px 5px rgba(0,0,0,0.2));
 }
 
-.home-link:active {
-    transform: scale(0.9);
-}
-
-/* 4. Адаптация под смартфоны (Экран меньше 768px) */
+/* --- АДАПТАЦИЯ (Мобильные) --- */
 @media (max-width: 768px) {
     .button-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 колонки на телефоне */
-        margin-top: 20px; /* Уменьшаем отступ для маленьких экранов */
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 20px;
         gap: 15px;
         padding: 0 20px 20px 20px;
     }
 
     .home-link {
-        /* На смартфонах смещаем кнопку для удобства большого пальца */
-        top: 3%;
-        left: 5%;
-        width: 18%; 
+        width: 15%; /* На телефонах кнопку делаем чуть крупнее */
+        top: 4%;    /* Немного корректируем позицию для мобильных */
+        left: 6%;
     }
 }
