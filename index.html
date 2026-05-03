@@ -3,25 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Инфо-меню</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Меню - Центр Духовного Возрождения</title>
+    <style>
+        /* Базовые сбросы */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            background: url('images/background.jpg') no-repeat center top;
+            background-size: cover;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: -apple-system, sans-serif;
+        }
+
+        /* Главный контейнер ровно 430px */
+        .main-container {
+            width: 430px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Шапка без отступов сверху и по бокам */
+        .header-top {
+            width: 100%;
+            line-height: 0; /* Убирает микро-отступ под картинкой */
+            margin-bottom: 30px; /* Тот самый отступ до кнопок */
+        }
+
+        .header-top img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Сетка кнопок */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            width: 100%;
+            padding: 0 10px; /* Небольшой отступ кнопок от краев контейнера */
+        }
+
+        .grid-container a {
+            display: block;
+            width: 100%;
+        }
+
+        .grid-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Адаптивность для экранов меньше 430px */
+        @media (max-width: 430px) {
+            .main-container {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="kiosk-container">
-        <header class="main-header">
-            <img src="images/header.png" alt="Header" class="header-img">
+
+    <div class="main-container">
+        <!-- Шапка: вплотную к верху и бокам -->
+        <header class="header-top">
+            <img src="images/header.svg" alt="Header">
         </header>
-        
-        <main class="button-grid">
-            <a href="about.html" class="grid-item" style="background-image: url('images/btn1.png');"></a>
-            <a href="https://sites.google.com/view/sdaschedule" class="grid-item" style="background-image: url('images/btn2.png');"></a>
-            <a href="https://esd.adventist.org/sabbath-school-lessons/" class="grid-item" style="background-image: url('images/btn3.png');"></a>
-            <a href="https://adventistgiving.org/donate/ANPPPG" class="grid-item" style="background-image: url('images/btn4.png');"></a>
-            <a href="https://adventistla.org" class="grid-item" style="background-image: url('images/btn5.png');"></a>
-            <a href="https://www.bible.com/ru/bible/400/JHN.1.SYNO" class="grid-item" style="background-image: url('images/btn6.png');"></a>
-            <a href="https://m.egwwritings.org/ru" class="grid-item" style="background-image: url('images/btn7.png');"></a>
-            <a href="" class="grid-item" style="background-image: url('images/btn8.png');"></a>
+
+        <!-- Сетка кнопок через 150px от шапки -->
+        <main class="grid-container">
+            <a href="about.html"><img src="images/about.svg" alt="О нас"></a>
+            <a href="program.html"><img src="images/program.svg" alt="Программа"></a>
+            <a href="social.html"><img src="images/social.svg" alt="Соцсети"></a>
+            <a href="donate.html"><img src="images/donate.svg" alt="Пожертвования"></a>
+            <a href="school.html"><img src="images/school.svg" alt="Школа"></a>
+            <a href="bible.html"><img src="images/bible.svg" alt="Библия"></a>
+            <a href="books.html"><img src="images/books.svg" alt="Книги"></a>
+            <a href="offer.html"><img src="images/offer.svg" alt="Предложение"></a>
         </main>
     </div>
+
 </body>
 </html>
