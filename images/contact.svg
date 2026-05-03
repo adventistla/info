@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="262" height="38" viewBox="0 0 262 38">
-  <g id="contact" transform="translate(-84 -482)">
-    <g id="Rectangle_2" data-name="Rectangle 2" transform="translate(84 482)" fill="#fff" stroke="#28638b" stroke-width="1">
-      <rect width="262" height="38" rx="19" stroke="none"/>
-      <rect x="0.5" y="0.5" width="261" height="37" rx="18.5" fill="none"/>
-    </g>
-    <text id="СВЯЗАТЬСЯ_С_НАМИ" data-name="СВЯЗАТЬСЯ С НАМИ" transform="translate(126 508)" fill="#335d7d" font-size="20" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">СВЯЗАТЬСЯ С НАМИ</tspan></text>
-  </g>
-</svg>
