@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наши соцсети - ЦДВ</title>
+    <style>
+        /* Базовые сбросы */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: url('images/background.jpg') no-repeat center top;
+            background-size: cover;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: -apple-system, sans-serif;
+        }
+
+        /* Главный контейнер 430px */
+        .main-container {
+            width: 430px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 200px;
+        }
+
+        /* Шапка */
+        .header-top {
+            width: 100%;
+            line-height: 0;
+            margin-bottom: 0; 
+        }
+
+        .header-top img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Кнопка Домой и Управление отступом сетки */
+        .nav-bar {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            padding: 0 40px;
+            margin-top: -20px; 
+            
+            /* МЕНЯЙТЕ ЭТО ЗНАЧЕНИЕ ДЛЯ ПОДГОНКИ ОТСТУПА СЕТКИ */
+            margin-bottom: 100px; 
+            
+            position: relative;
+            z-index: 10;
+        }
+
+        .btn-home img {
+            width: 145px;
+            height: auto;
+            display: block;
+        }
+
+        /* Сетка соцсетей 2х2 */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 35px; 
+            width: 50%; 
+        }
+
+        .social-grid a {
+            display: block;
+            width: 100%;
+        }
+
+        .social-grid img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @media (max-width: 430px) {
+            .main-container { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <header class="header-top">
+            <img src="images/header.svg" alt="Header">
+        </header>
+
+        <nav class="nav-bar">
+            <a href="index.html" class="btn-home">
+                <img src="images/home.svg" alt="Домой">
+            </a>
+        </nav>
+
+        <main class="social-grid">
+            <a href="https://www.youtube.com/@revivalcenterla" target="_blank">
+                <img src="images/youtube.png" alt="YouTube">
+            </a>
+            <a href="https://www.instagram.com/revivalcenterla" target="_blank">
+                <img src="images/instagram.png" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com/revivalcenterla" target="_blank">
+                <img src="images/facebook.png" alt="Facebook">
+            </a>
+            <a href="https://www.tiktok.com/@revivalcenterla" target="_blank">
+                <img src="images/tiktok.png" alt="TikTok">
+            </a>
+        </main>
+    </div>
+</body>
+</html>
