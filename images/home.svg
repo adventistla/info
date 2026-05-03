@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="149" height="38" viewBox="0 0 149 38">
+  <g id="home" transform="translate(-227 -107)">
+    <g id="Rectangle_1" data-name="Rectangle 1" transform="translate(227 107)" fill="#fff" stroke="#28638b" stroke-width="1">
+      <rect width="149" height="38" rx="19" stroke="none"/>
+      <rect x="0.5" y="0.5" width="148" height="37" rx="18.5" fill="none"/>
+    </g>
+    <text id="ДОМОЙ" transform="translate(263 133)" fill="#335d7d" font-size="20" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">ДОМОЙ</tspan></text>
+  </g>
+</svg>
